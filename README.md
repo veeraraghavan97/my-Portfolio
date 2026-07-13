@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Veera Raghavan — Portfolio
 
 A React + Vite + Tailwind CSS + Framer Motion portfolio. Built as a proper
@@ -85,3 +86,6 @@ behind it yet. When you're ready to wire up a real agent:
    a model API directly from the browser with a secret key).
 2. The rest of the widget UI (open/close state, message log, input) doesn't
    need to change.
+=======
+My website for now
+>>>>>>> 4fea5751ce742e4c1f7be2e85e27c5e94bb0bab5
