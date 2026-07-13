@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: linear-gradient(rgba(79, 216, 196, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 216, 196, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+::selection {
+  background: #4fd8c4;
+  color: #04120f;
+}
+
+:focus-visible {
+  outline: 2px solid #4fd8c4;
+  outline-offset: 3px;
+}
+
+/* thin scrollbar for a technical feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0f1c;
+}
+::-webkit-scrollbar-thumb {
+  background: #23304a;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4fd8c4;
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+.animate-pulse-soft {
+  animation: pulse-soft 1.6s ease-in-out infinite;
+}
+
+@keyframes bot-float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+.animate-bot-float {
+  animation: bot-float 3.4s ease-in-out infinite;
+}
+
+@keyframes bot-wave {
+  0%,
+  8% {
+    transform: rotate(0deg);
+  }
+  16% {
+    transform: rotate(-32deg);
+  }
+  24% {
+    transform: rotate(-8deg);
+  }
+  32% {
+    transform: rotate(-28deg);
+  }
+  40%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.animate-bot-wave {
+  animation: bot-wave 7s ease-in-out infinite;
+  transform-box: fill-box;
+}
+
+@keyframes bot-blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.15);
+  }
+}
+.animate-bot-blink {
+  animation: bot-blink 4.5s ease-in-out infinite;
+  transform-box: fill-box;
+}
+
+@keyframes bot-blink-slow {
+  0%,
+  100% {
+    opacity: 1;
+    r: 4;
+  }
+  50% {
+    opacity: 0.5;
+    r: 3.2;
+  }
+}
+.animate-bot-blink-slow {
+  animation: bot-blink-slow 2.2s ease-in-out infinite;
+}
+
+@keyframes bot-thruster {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+}
+.animate-bot-thruster {
+  animation: bot-thruster 1.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes bot-greeting {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  10%,
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+.animate-bot-greeting {
+  animation: bot-greeting 5s ease-in-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bot-float,
+  .animate-bot-wave,
+  .animate-bot-blink,
+  .animate-bot-blink-slow,
+  .animate-bot-thruster {
+    animation: none;
+  }
+  .animate-pulse-soft {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
